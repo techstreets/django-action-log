@@ -1,5 +1,11 @@
 django-action-log
 -----------------
+.. image:: https://img.shields.io/pypi/dm/django-action-log.svg
+    :target:  https://pypi.python.org/pypi/django-action-log/
+
+.. image:: https://img.shields.io/pypi/v/django-action-log.svg
+    :target:  https://pypi.python.org/pypi/django-action-log/
+
 
 Simple and small action logger for django. You can log arbitrary action with username and optional payload that goes with your action.
 
