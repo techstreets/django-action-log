@@ -9,6 +9,7 @@ setup(
     author_email='bradojevic@gmail.com',
     url='https://github.com/bradojevic/django-action-log',
     download_url='https://github.com/bradojevic/django-action-log/tarball/0.1',
+    dependency_links=['https://github.com/bradojevic/django-action-log/tarball/0.1'],
     keywords=[
         'django',
         'logging',
