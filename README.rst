@@ -16,10 +16,11 @@ You can log arbitrary action with username and optional payload that goes with y
 
 Example
 -------
-from action_log.models import ActionRecord
+.. code-block:: python
+    from action_log.models import ActionRecord
 
-ActionRecord.objects.create_record(
-    'example_action_name',
-    username='username or some identifier',
-    payload='{"param1": "custom value", "param2": "different value"}'
-)
+    ActionRecord.objects.create_record(
+        'example_action_name',
+        username='username or some identifier',
+        payload='{"param1": "custom value", "param2": "different value"}'
+    )
