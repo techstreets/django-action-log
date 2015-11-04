@@ -26,7 +26,7 @@ def get_action_records(request):
         limit = max_limit
 
     # filter out records
-    records = ActionRecord.objects.all()
+    records = ActionRecord.objects.all().order_by('-id')
     if action is not None:
         records = records.filter(action_type__name=action)
     if limit != 0:
