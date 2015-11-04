@@ -1,8 +1,10 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
+import time
 import json
 from django.db import models
+from django.utils.dateformat import format
 
 
 class ActionType(models.Model):
@@ -87,3 +89,22 @@ class ActionRecord(models.Model):
     class Meta:
         app_label = 'action_log'
         db_table = 'action_log__action_record'
+
+    # https://docs.djangoproject.com/en/dev/ref/templates/builtins/#date
+    def dump(self, fields):
+        defaults = {
+            'action': self.action_type.name,
+            'username': self.username,
+            'date_created': format(self.date_created, 'U'),
+            'date_created_ISO8601': format(
+                self.date_created, 'c'
+            ),
+            # 'date_created': int(time.mktime(
+            #     self.date_created.timetuple()
+            # )),
+            'payload': self.payload,
+        }
+        return {
+            field: defaults[field]
+            for field in defaults if field in fields
+        }
