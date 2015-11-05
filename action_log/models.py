@@ -93,6 +93,7 @@ class ActionRecord(models.Model):
     # https://docs.djangoproject.com/en/dev/ref/templates/builtins/#date
     def dump(self, fields):
         defaults = {
+            'id': self.id,
             'action': self.action_type.name,
             'username': self.username,
             'date_created': format(self.date_created, 'U'),
